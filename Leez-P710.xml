@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
+	<remote name="systemready" fetch="https://gitlab.arm.com/systemready" />
+	<remote name="tfa" fetch="https://git.trustedfirmware.org/TF-A" />
+	<remote name="u-boot" fetch="https://gitlab.denx.de/u-boot" />
 
-   <remote name="github" fetch="https://github.com" />
-   <remote name="u-boot" fetch="https://gitlab.denx.de/u-boot" />
-   
-   <default remote="github" revision="master" />
-   
-   <project path="atf" name="ARM-software/arm-trusted-firmware.git" revision="refs/tags/v2.4" />
-   <project path="u-boot" name="u-boot.git" revision="refs/tags/v2021.07" remote="u-boot" />
-   <project path="build" name="ankuraltran/ARMSRBuild.git">
-      <linkfile src="Leez-P710.mk" dest	="build/Makefile" />
-   </project>
-   
+	<default remote="systemready" revision="main" />
+
+	<project path="atf" remote="tfa" name="trusted-firmware-a.git" revision="refs/tags/v2.4"/>
+	<project path="u-boot" remote="u-boot" name="u-boot.git" revision="refs/tags/v2021.07"/>
+	<project path="build" remote="systemready" name="firmware-build/rk3399-build">
+		<linkfile src="Leez-P710.mk" dest="build/Makefile" />
+	</project>
 </manifest>

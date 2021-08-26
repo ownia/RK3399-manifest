@@ -1,6 +1,7 @@
-# ARMSR Manifest for RK3399 EVB Target Setup
+# Repo Manifest for Systemready IR compliant rk3399 firmware
 
-The information provided here provides the configuration and build setup for ARM System Ready compliance verification on Rockchip RK3399
+The information provided here provides the configuration and build setup for
+ARM SystemReady compliant firmware for some Rockchip RK3399 based platforms.
 
 There are three Evaluation Platforms being used as platform for the verification
 
@@ -19,11 +20,11 @@ Follow the instructions under the "Installing Repo" section
 ```
 $ mkdir <New_Dir>
 $ cd <New_Dir>
-$ repo init -u https://github.com/ankuraltran/ARMSRManifest -m ${TARGET}.xml [-b ${BRANCH}]
+$ repo init -u https://gitlab.arm.com/systemready/firmware-build/rk3399-manifest -m ${TARGET}.xml [-b ${BRANCH}]
 $ repo sync -j4 --no-clone-bundle
 ```
 
-## 3. Get the Toolkits
+## 3. Get the Aarch64 toolchain (optional)
 ```
 $ cd <New_Dir>/build/
 $ make -j2 toolchains
@@ -34,15 +35,18 @@ $ make -j2 toolchains
 $ make -j `nproc`
 ```
 
-## 5.Target Image Flashing Procedure 
+## 5.Target Image Flashing Procedure
 
-The sequence will sync the atf(bl31), uboot(uboot.itb) to the local repo and make the images for the selected target. Currently the Image flashing is carried out manually using the rktool and is pending for automation at a later stage.
+The sequence will sync the atf(bl31), uboot(uboot.itb) to the local repo and
+make the images for the selected target. Image flashing can be carried out
+manually using the rktool, or the `make flash` target will use rkdeveloptool to
+copy the images to a board in BOOTROM mode.
+
 ```
 Install Android Tool v2.71
 Address Name Path :
-0x0000 Miniloader   — ../miniloader.bin
-0x0000 Parameter    — ../paramter_toybrick.txt
-0x0040 loader1      — ../idbloader.img
-0x4000 loader2      — ../uboot.itb
-0x8000 SCT          — ../sct.efi
+0x0000 Miniloader          — ../miniloader.bin
+0x0000 GPT Partition Table — ../paramter_toybrick.txt
+0x0040 loader1             — ../idbloader.img
+0x4000 loader2             — ../uboot.itb
 ```
