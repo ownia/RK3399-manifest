@@ -2,13 +2,12 @@
 <manifest>
 	<remote name="systemready" fetch="https://gitlab.arm.com/systemready" />
 	<remote name="tfa" fetch="https://git.trustedfirmware.org/TF-A" />
-	<remote name="u-boot" fetch="https://gitlab.denx.de/u-boot" />
 
 	<default remote="systemready" revision="main" />
 
 	<project path="atf" remote="tfa" name="trusted-firmware-a.git" revision="refs/tags/v2.4"/>
-	<project path="u-boot" remote="u-boot" name="u-boot.git" revision="refs/tags/v2021.07"/>
-	<project path="build" remote="systemready" name="firmware-build/rk3399-build">
+	<project path="u-boot" remote="systemready" name="firmware-build/U-Boot" revision="refs/tags/rockpro64-21.09"/>
+	<project path="build" remote="systemready" name="firmware-build/rk3399-build" revision="refs/tags/rockpro64-21.09">
 		<linkfile src="RockPro64.mk" dest="build/Makefile" />
 	</project>
 </manifest>

@@ -24,6 +24,12 @@ $ repo init -u https://gitlab.arm.com/systemready/firmware-build/rk3399-manifest
 $ repo sync -j4 --no-clone-bundle
 ```
 
+To obtain the same firmware as the one used for ROCKPro64 certification, use this `repo init` command:
+
+```
+$ repo init -u https://gitlab.arm.com/systemready/firmware-build/rk3399-manifest -m RockPro64.xml -b refs/tags/rockpro64-21.09
+```
+
 ## 3. Get the Aarch64 toolchain (optional)
 ```
 $ cd <New_Dir>/build/
@@ -33,6 +39,12 @@ $ make -j2 toolchains
 ## 4. Build the target
 ```
 $ make -j `nproc`
+```
+
+To build a capsule, use this `make` command:
+
+```
+$ make -j `nproc` capsule
 ```
 
 ## 5.Target Image Flashing Procedure
