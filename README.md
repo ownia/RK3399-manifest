@@ -30,6 +30,12 @@ To obtain the same firmware as the one used for ROCKPro64 certification, use thi
 $ repo init -u https://gitlab.arm.com/systemready/firmware-build/rk3399-manifest -m RockPro64.xml -b refs/tags/rockpro64-21.09
 ```
 
+To obtain the same firmware as the one used for Toybrick TB-RK3399ProD certification, use this `repo init` command:
+
+```
+$ repo init -u https://gitlab.arm.com/systemready/firmware-build/rk3399-manifest -m TB-RK3399proD.xml -b refs/tags/tb-rk3399prod-21.09
+```
+
 ## 3. Get the Aarch64 toolchain (optional)
 ```
 $ cd <New_Dir>/build/
