@@ -42,7 +42,7 @@ sudo apt-get install repo
 ```
 mkdir <New_Dir>
 cd <New_Dir>
-repo init -u https://gitlab.arm.com/systemready/firmware-build/rk3399-manifest -m TB-RK3399proD.xml
+repo init -u https://github.com/ownia/RK3399-manifest -m TB-RK3399proD.xml
 repo sync -j4 --no-clone-bundle
 ```
 
