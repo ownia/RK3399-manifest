@@ -10,7 +10,7 @@
 	<project path="atf" remote="tfa" name="trusted-firmware-a.git" revision="refs/tags/v2.4"/>
 	<project path="u-boot" remote="u-boot" name="u-boot.git" revision="TB-RK3399ProD"/>
 	<project path="rkbin" name="rkbin.git" revision="master" remote="rkbin" />
-	<project path="build" remote="systemready" name="firmware-build/rk3399-build">
+	<project path="build" remote="u-boot" name="RK3399-build.git" revision="main">
 		<linkfile src="TB-RK3399proD.mk" dest="build/Makefile" />
 	</project>
 </manifest>
