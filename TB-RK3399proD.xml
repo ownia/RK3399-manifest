@@ -8,7 +8,7 @@
 	<default remote="systemready" revision="main" />
 
 	<project path="atf" remote="tfa" name="trusted-firmware-a.git" revision="refs/tags/v2.6"/>
-	<project path="u-boot" remote="ownia" name="u-boot.git" revision="TB-RK3399ProD"/>
+	<project path="u-boot" remote="ownia" name="u-boot.git" revision="TB-RK3399ProD-202204"/>
 	<project path="rkbin" name="rkbin.git" revision="master" remote="rkbin" />
 	<project path="build" remote="ownia" name="RK3399-build.git" revision="main">
 		<linkfile src="TB-RK3399proD.mk" dest="build/Makefile" />
